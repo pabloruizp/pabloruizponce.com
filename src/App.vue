@@ -1,30 +1,39 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/"><span>Home</span></router-link> 
+    <router-link to="/projects"><span>Projects</span></router-link>
+    <router-link to="/contact"><span>Contact</span></router-link>
   </nav>
   <router-view/>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
 }
-
 nav {
-  padding: 30px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+a {
+  float: left;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+a > span{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
+
+/* Change the link color to #111 (black) on hover */
+a:hover {
+  background-color: #111;
+}
+
 </style>

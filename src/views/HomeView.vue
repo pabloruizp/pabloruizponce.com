@@ -1,5 +1,5 @@
 <script>
-import SocialMediaBar from "./SocialMediaBar.vue";
+import SocialMediaBar from "../components/SocialMediaBar.vue";
 
 export default {
   components: {

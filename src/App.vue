@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <template>
   <nav>
     <router-link to="/" class="home_navbar"><span>HOME</span></router-link> 

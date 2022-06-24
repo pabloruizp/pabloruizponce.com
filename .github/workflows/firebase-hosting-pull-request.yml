@@ -7,17 +7,17 @@ jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
+    env: 
+      apiKey:  ${{ secrets.APIKEY }}
+      authDomain:  ${{ secrets.AUTHDOMAIN }}
+      projectId:  ${{ secrets.PROJECTID }}
+      storageBucket:  ${{ secrets.STORAGEBUCKET }}
+      messagingSenderId:  ${{ secrets.MESSAGINGSENDERID }}
+      appId:  ${{ secrets.APPID }}
+      measurementId:  ${{ secrets.MEASUREMENTID }}
     steps:
       - uses: actions/checkout@v2
-        env: 
-          apiKey:  ${{ secrets.APIKEY }}
-          authDomain:  ${{ secrets.AUTHDOMAIN }}
-          projectId:  ${{ secrets.PROJECTID }}
-          storageBucket:  ${{ secrets.STORAGEBUCKET }}
-          messagingSenderId:  ${{ secrets.MESSAGINGSENDERID }}
-          appId:  ${{ secrets.APPID }}
-          measurementId:  ${{ secrets.MEASUREMENTID }}
-        run: echo "${{env.apiKey}} ${{env.authDomain}} ${{env.projectId}} ${{env.storageBucket}} ${{env.messagingSenderId}} ${{env.appId}} ${{env.measurementId}}"
+      - run: echo "${{env.apiKey}} ${{env.authDomain}} ${{env.projectId}} ${{env.storageBucket}} ${{env.messagingSenderId}} ${{env.appId}} ${{env.measurementId}}"
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

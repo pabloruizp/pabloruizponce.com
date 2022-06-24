@@ -10,13 +10,13 @@ console.log( process.env.messagingSenderId)
 console.log( process.env.appId)
 console.log( process.env.measurementId)
 
-console.log( process.env.VITE_apiKey)
-console.log( process.env.VITE_authDomain)
-console.log( process.env.VITE_projectId)
-console.log( process.env.VITE_storageBucket)
-console.log( process.env.VITE_messagingSenderId)
-console.log( process.env.VITE_appId)
-console.log( process.env.VITE_measurementId)
+console.log( import.meta.env.VITE_apiKey)
+console.log( import.meta.env.VITE_authDomain)
+console.log( import.meta.env.VITE_projectId)
+console.log( import.meta.VITE_storageBucket)
+console.log( import.meta.VITE_messagingSenderId)
+console.log( import.meta.VITE_appId)
+console.log( import.meta.VITE_measurementId)
 
 const apiKey = import.meta.env.VITE_apiKey != undefined ? import.meta.env.VITE_apiKey : process.env.apiKey
 const authDomain =  import.meta.env.VITE_authDomain != undefined ? import.meta.env.VITE_authDomain : process.env.authDomain

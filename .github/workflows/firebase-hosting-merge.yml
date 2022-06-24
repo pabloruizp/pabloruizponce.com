@@ -19,7 +19,15 @@ jobs:
       measurementId:  ${{ secrets.MEASUREMENTID }}
     steps:
       - uses: actions/checkout@v2
-      - run: echo "${{env.apiKey}} ${{env.authDomain}} ${{env.projectId}} ${{env.storageBucket}} ${{env.messagingSenderId}} ${{env.appId}} ${{env.measurementId}}"
+      - run: |
+          touch .env 
+          echo apiKey="${{env.apiKey}}" >> .env
+          echo authDomain="${{env.authDomain}}" >> .env 
+          echo projectId="${{env.projectId}}" >> .env 
+          echo storageBucket="${{env.storageBucket}}" >> .env
+          echo messagingSenderId="${{env.messagingSenderId}}" .env
+          echo appId="${{env.appId}}" >> .env
+          echo measurementId="${{env.measurementId}}" >> .env
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

@@ -25,5 +25,6 @@ const router = createRouter({
   history: createWebHistory(),
   routes
 })
+router.replace({ path: '*', redirect: '/' })
 
 export default router

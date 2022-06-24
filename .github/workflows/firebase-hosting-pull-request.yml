@@ -17,6 +17,7 @@ jobs:
           messagingSenderId:  ${{ secrets.MESSAGINGSENDERID }}
           appId:  ${{ secrets.APPID }}
           measurementId:  ${{ secrets.MEASUREMENTID }}
+        run: echo "${{env.apiKey}} ${{env.authDomain}} ${{env.projectId}} ${{env.storageBucket}} ${{env.messagingSenderId}} ${{env.appId}} ${{env.measurementId}}"
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

@@ -11,7 +11,17 @@ export default {
         const projects = collection(db, "projects");
         const querySnap = await getDocs(projects);
         querySnap.forEach((doc) => {
-            this.projects.push({ id: doc.id, name: doc.data().name, description: doc.data().description });
+            const project = { id: doc.id, name: doc.data().name, description: doc.data().description }
+            
+            if(doc.data().github != null) {
+              project['github'] = doc.data().github
+            }
+            
+            if(doc.data().demo != null) {
+              project['demo'] = doc.data().demo
+            }
+            
+            this.projects.push(project);
         });
     },
     components: { ProjectPreview }
@@ -21,7 +31,7 @@ export default {
 
 <template>
   <div class="projects">
-    <ProjectPreview v-for="project in projects" :id=project.id :name=project.name :description=project.description />
+    <ProjectPreview v-for="project in projects" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" />
   </div>
 </template>
 

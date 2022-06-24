@@ -5,7 +5,6 @@
   <nav>
     <router-link to="/" class="home_navbar"><span>HOME</span></router-link> 
     <router-link to="/projects"><span>PROJECTS</span></router-link>
-    <router-link to="/contact"><span>CONTACT</span></router-link>
   </nav>
   <router-view/>
 </template>
@@ -22,7 +21,7 @@
 nav {
   list-style-type: none;
   font-family: Helvetica, sans-serif;
-  margin: 0;
+  margin: 0 5vw;
   padding: 0;
   overflow: hidden;
 }

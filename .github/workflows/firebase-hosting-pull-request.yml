@@ -17,7 +17,8 @@ jobs:
       measurementId:  ${{ secrets.MEASUREMENTID }}
     steps:
       - uses: actions/checkout@v2
-      - run: echo "${{env.apiKey}} ${{env.authDomain}} ${{env.projectId}} ${{env.storageBucket}} ${{env.messagingSenderId}} ${{env.appId}} ${{env.measurementId}}" && npm ci && npm run build
+      - run: echo "${{env.apiKey}} ${{env.authDomain}} ${{env.projectId}} ${{env.storageBucket}} ${{env.messagingSenderId}} ${{env.appId}} ${{env.measurementId}}"
+      - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

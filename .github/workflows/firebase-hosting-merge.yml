@@ -21,13 +21,13 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           touch .env 
-          echo apiKey="${{env.apiKey}}" >> .env
-          echo authDomain="${{env.authDomain}}" >> .env 
-          echo projectId="${{env.projectId}}" >> .env 
-          echo storageBucket="${{env.storageBucket}}" >> .env
-          echo messagingSenderId="${{env.messagingSenderId}}" .env
-          echo appId="${{env.appId}}" >> .env
-          echo measurementId="${{env.measurementId}}" >> .env
+          echo VITE_apiKey="${{env.apiKey}}" >> .env
+          echo VITE_authDomain="${{env.authDomain}}" >> .env 
+          echo VITE_projectId="${{env.projectId}}" >> .env 
+          echo VITE_storageBucket="${{env.storageBucket}}" >> .env
+          echo VITE_messagingSenderId="${{env.messagingSenderId}}" .env
+          echo VITE_appId="${{env.appId}}" >> .env
+          echo VITE_measurementId="${{env.measurementId}}" >> .env
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

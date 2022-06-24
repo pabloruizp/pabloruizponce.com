@@ -2,29 +2,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 
-console.log( process.env.apiKey)
-console.log( process.env.authDomain)
-console.log( process.env.projectId)
-console.log( process.env.storageBucket)
-console.log( process.env.messagingSenderId)
-console.log( process.env.appId)
-console.log( process.env.measurementId)
 
-console.log( import.meta.env.VITE_apiKey)
-console.log( import.meta.env.VITE_authDomain)
-console.log( import.meta.env.VITE_projectId)
-console.log( import.meta.VITE_storageBucket)
-console.log( import.meta.VITE_messagingSenderId)
-console.log( import.meta.VITE_appId)
-console.log( import.meta.VITE_measurementId)
-
-const apiKey = import.meta.env.VITE_apiKey != undefined ? import.meta.env.VITE_apiKey : process.env.apiKey
-const authDomain =  import.meta.env.VITE_authDomain != undefined ? import.meta.env.VITE_authDomain : process.env.authDomain
-const projectId = import.meta.env.VITE_projectId != undefined ? import.meta.env.VITE_projectId : process.env.projectId
-const storageBucket =  import.meta.env.VITE_storageBucket != undefined ? import.meta.env.VITE_storageBucket : process.env.storageBucket
-const messagingSenderId = import.meta.env.VITE_messagingSenderId != undefined ? import.meta.env.VITE_messagingSenderId : process.env.messagingSenderId
-const appId = import.meta.env.VITE_appId != undefined ? import.meta.env.VITE_appId : process.env.appId
-const measurementId = import.meta.env.VITE_measurementId != undefined ? import.meta.env.VITE_measurementId : process.env.measurementId
+const apiKey = import.meta.env.VITE_apiKey 
+const authDomain =  import.meta.env.VITE_authDomain
+const projectId = import.meta.env.VITE_projectId 
+const storageBucket =  import.meta.env.VITE_storageBucket 
+const messagingSenderId = import.meta.env.VITE_messagingSenderId 
+const appId = import.meta.env.VITE_appId
+const measurementId = import.meta.env.VITE_measurementId
 
 // Your web app's Firebase configuration
 

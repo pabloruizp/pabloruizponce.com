@@ -14,6 +14,10 @@
   margin: 0;
 }
 
+body{
+    background-color: rgb(255, 255, 255);
+}
+
 .home_navbar {
   float: left;
 }

@@ -31,14 +31,23 @@ export default {
 
 <template>
   <div class="projects">
-    <ProjectPreview v-for="project in projects" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" />
+    <div class="projects-grid">
+      <ProjectPreview v-for="project in projects" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" />
+    </div>
   </div>
 </template>
 
 
 <style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw;
+    column-gap: 2vw;
+    row-gap: 2vw;
+  }
+
   .projects {
-    margin-top: 5em;
+    margin: 5vw 10vw;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -6,7 +6,8 @@ export default {
     description: String,
     github: String,
     demo: String,
-    imageURL: String
+    imageURL: String,
+    tags: []
   }
 }
 </script>
@@ -16,6 +17,9 @@ export default {
         <div class="featured-preview-left">
                 <div class="name-preview">
                     {{name}}
+                </div>
+                <div class="tag-preview">
+                    <span v-for="tag in tags">{{tag}}</span>
                 </div>
                 <div class="description-preview">
                     {{description}}
@@ -40,6 +44,20 @@ export default {
 </template>
 
 <style>
+
+.tag-preview {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.9em;
+    font-weight: 200;
+    color: gray;
+    margin-bottom: 1em;
+}
+
+.tag-preview > span {
+    margin-right: 1em;
+}
+
 .featured-image-box {
     width: 50%;
 }
@@ -96,6 +114,8 @@ export default {
 }
 
 .name-preview {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
     font-weight: 800;
 }
 

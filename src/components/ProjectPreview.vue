@@ -5,7 +5,8 @@ export default {
     name: String,
     description: String,
     github: String,
-    demo: String
+    demo: String,
+    tags: []
   }
 }
 </script>
@@ -14,6 +15,9 @@ export default {
     <div class="base-preview">
         <div class="name-preview">
             {{name}}
+        </div>
+        <div class="tag-preview">
+            <span v-for="tag in tags">{{tag}}</span>
         </div>
         <div class="description-preview">
             {{description}}
@@ -34,6 +38,19 @@ export default {
 </template>
 
 <style>
+
+.tag-preview {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.9em;
+    font-weight: 200;
+    color: gray;
+    margin-bottom: 1em;
+}
+
+.tag-preview > span {
+    margin-right: 1em;
+}
 
 .base-preview {
     display: flex;

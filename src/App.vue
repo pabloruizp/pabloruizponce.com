@@ -29,12 +29,36 @@ export default {
     <router-link to="/projects"><span>PROJECTS</span></router-link>
   </nav>
   <router-view/>
+  <footer><a href="https://www.github.com/pabloruizp/pabloruizponce.com">Built and Designed by Pablo Ruiz Ponce</a></footer>
 </template>
 
 <style>
 * {
   margin: 0;
 }
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position:relative;
+  padding: 2em 0;
+  bottom: 0;
+  font-family: 'Inter';
+  font-size: 0.9em;
+  font-weight: 200;
+}
+
+footer > a {
+  color: black;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+footer > a:hover {
+  color: rgb(179, 179, 179);
+}
+
 
 body{
     background-color: rgb(255, 255, 255);
@@ -46,7 +70,7 @@ body{
 
 nav {
   list-style-type: none;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Inter';
   margin: 0 5vw;
   padding: 0;
   overflow: hidden;

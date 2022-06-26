@@ -14,7 +14,7 @@ export default {
         const projects = query(collection(db, "projects"), orderBy("creation_date", "desc"));
         const querySnap = await getDocs(projects);
         querySnap.forEach((doc) => {
-            const project = { id: doc.id, name: doc.data().name, description: doc.data().description }
+            const project = { id: doc.id, name: doc.data().name, description: doc.data().description, tags: doc.data().tags}
             
             if(doc.data().github != null) {
               project['github'] = doc.data().github
@@ -45,10 +45,10 @@ export default {
 <template>
   <div class="projects">
     <div class="featured-grid">
-      <FeaturedPreview v-for="project in featured" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" :imageURL="project.imageURL" ></FeaturedPreview>
+      <FeaturedPreview v-for="project in featured" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" :imageURL="project.imageURL" :tags="project.tags"></FeaturedPreview>
     </div>
     <div class="projects-grid">
-      <ProjectPreview v-for="project in projects" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" />
+      <ProjectPreview v-for="project in projects" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" :tags="project.tags" />
     </div>
   </div>
 </template>

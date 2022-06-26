@@ -1,9 +1,31 @@
 <script>
+import db from "./firebaseInit.js";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
+
+
+export default {
+  data: () => ({
+    curriculum: String,
+  }),
+  created() {
+    const storage = getStorage();
+    const storageRef = ref(storage, "resume.pdf");
+    getDownloadURL(storageRef)
+      .then((url) => {
+        this.curriculum = url
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+  }
+}
+
 </script>
 
 <template>
   <nav>
     <router-link to="/" class="home_navbar"><span>HOME</span></router-link> 
+    <a :href="curriculum"><span>RESUME</span></a>
     <router-link to="/projects"><span>PROJECTS</span></router-link>
   </nav>
   <router-view/>

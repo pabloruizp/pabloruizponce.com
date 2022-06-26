@@ -7,7 +7,7 @@ export default {
   data: () => ({
     curriculum: String,
   }),
-  created() {
+  mounted() {
     const storage = getStorage();
     const storageRef = ref(storage, "resume.pdf");
     getDownloadURL(storageRef)

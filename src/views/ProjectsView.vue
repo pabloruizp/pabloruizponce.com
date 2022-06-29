@@ -24,6 +24,10 @@ export default {
               project['demo'] = doc.data().demo
             }
 
+            if(doc.data().documentation != null) {
+              project['documentation'] = doc.data().documentation
+            }
+
             if(doc.data().featured == true) {
                 const storage = getStorage();
                 const storageRef = ref(storage, "featured/" + doc.id + ".png");
@@ -45,10 +49,10 @@ export default {
 <template>
   <div class="projects">
     <div class="featured-grid">
-      <FeaturedPreview v-for="project in featured" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" :imageURL="project.imageURL" :tags="project.tags"></FeaturedPreview>
+      <FeaturedPreview v-for="project in featured" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" :imageURL="project.imageURL" :tags="project.tags" :documentation="project.documentation"></FeaturedPreview>
     </div>
     <div class="projects-grid">
-      <ProjectPreview v-for="project in projects" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" :tags="project.tags" />
+      <ProjectPreview v-for="project in projects" :id=project.id :name=project.name :description=project.description :github="project.github" :demo="project.demo" :tags="project.tags" :documentation="project.documentation"/>
     </div>
   </div>
 </template>

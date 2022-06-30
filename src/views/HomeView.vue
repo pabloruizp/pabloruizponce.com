@@ -15,7 +15,7 @@ export default {
     <h2>Machine Learning Researcher</h2>
     <h3>pabloruizp00@gmail.com</h3>
     <SocialMediaBar></SocialMediaBar>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>My name is Pablo Ruiz Ponce, I'm living in Barcelona (Spain) and I'm a Computer Engineer specialized in the Computer Vision and Machine Learning fields. Currently, I am studying the Artificial Intelligence MSc at the Universitat Politecnica de Catalunya. I'm passionate about creating and using computers to solve everyday problems.</p>
   </div>
 </template>
 

@@ -66,12 +66,16 @@ export default {
 }
 
 .featured-image-box {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    height: 100%;
     width: 50%;
+    border-radius: 0 0.5em 0.5em 0;
 }
 
 .featured-image {
-    max-width:100%;
-    max-height:100%;
+    max-width: 100%;
     border-radius: 0 0.5em 0.5em 0;
 }
 

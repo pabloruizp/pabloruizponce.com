@@ -68,7 +68,7 @@ export default {
     border-radius: 0.5em;
     position: relative;
     background-color: white;
-    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.2);
     transition: 0.3s ease-in-out;
 }
 
